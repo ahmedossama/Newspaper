@@ -4,7 +4,7 @@
 }
 
 .container{
-	width: 1080px;
+	width: 90%;
 	margin: auto;
 }
 
@@ -132,7 +132,7 @@ hr{
 	border-left: 1px solid black;
 	padding-left: 10px;
 	height: 1250px;
-	width: 645px;
+	width: 700px;
 }
 
 #video-container{
@@ -162,12 +162,12 @@ column-count: 2;
 
 .container-223{
 	display: inline-block;
-	width: 470px;
+	width: 500px;
 }
 
 .container-123{
 	display: inline-block;
-	width: 150px;
+	width: 160px;
 	vertical-align: top;
 	margin-left: 10px;
 	border-left: 1px solid black;
