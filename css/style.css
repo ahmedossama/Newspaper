@@ -1,6 +1,6 @@
 @font-face{
-	font-family: small-print;
-	url()
+	font-family: titlefont;
+	src: url('../resources/harryf.TTF');
 }
 
 .container{
@@ -16,7 +16,9 @@
 #paper-title{
 	display: inline-block;
 	width: 56%;
-	font-size: 80px;
+	font-size: 100px;
+	color: #606060  ;
+	font-family: titlefont;
 	position: relative;
 	top: -17px;
 }
@@ -32,6 +34,7 @@ border: 1px solid black;
 width: 225px;
 height: 90px;
 position: relative;
+font-family: titlefont;
 top: -1px;
 padding: 21px;
 margin-right: 10px;
@@ -66,6 +69,8 @@ box-sizing: border-box;
 	width: 200px;
 	vertical-align: top;
 	margin: 2px;
+	overflow: hidden;
+	height: 900px;
 }
 
 .container-top{
@@ -80,16 +85,18 @@ box-sizing: border-box;
 .title1{
 	display: block;
 	position: relative;
-	font-size: 50px;
+	font-size: 23px;
 	width: 100%;
 	white-space: pre-wrap;
+	margin: 0px;
 }
 
 .title2{
 	display: block;
 	position: relative;
 	width: 100%;
-	font-size: 30px;
+	font-size: 15px;
+	margin: 0px;
 	white-space: pre-wrap;
 }
 
@@ -97,6 +104,76 @@ box-sizing: border-box;
 	display: block;
 	position: relative;
 	width: 100%;
-	font-size: 10px;
+	margin: 0px;
 	white-space: pre-wrap;
+}
+
+hr{
+	width: 100px;
+	border: none;
+	background-color: black;
+	color:black;
+	height: 1px;
+}
+
+#part3{
+	display: inline-block;
+	width: 400px;
+}
+
+.container-3{
+	display: inline-block;
+	width: 420px;
+	height: 1250px;
+}
+.container-23{
+	display: inline-block;
+	vertical-align: top;
+	border-left: 1px solid black;
+	padding-left: 10px;
+	height: 1250px;
+	width: 645px;
+}
+
+#video-container{
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	margin: 2px;
+}
+
+.column-2 {
+column-count: 2;
+  column-gap: 1em;
+   -moz-column-count: 2;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 2;
+  -webkit-column-gap: 1em;
+}
+
+.column-3{
+	column-count: 3;
+  column-gap: 1em;
+   -moz-column-count: 3;
+  -moz-column-gap: 1em;
+  -webkit-column-count: 3;
+  -webkit-column-gap: 1em;
+}
+
+.container-223{
+	display: inline-block;
+	width: 470px;
+}
+
+.container-123{
+	display: inline-block;
+	width: 150px;
+	vertical-align: top;
+	margin-left: 10px;
+	border-left: 1px solid black;
+	padding-left: 10px;
+}
+
+div {
+	overflow: hidden;
 }
