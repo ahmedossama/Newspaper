@@ -13,6 +13,17 @@
 	src: url('../resources/Prociono.ttf');
 }
 
+@keyframes marquee {
+	from   {left: 0;}
+	to  {left: 100%;}
+}
+
+@-webkit-keyframes marquee /* Safari and Chrome */
+{
+from   {left: -100%;}
+	to  {left: 100%;}
+}
+
 .container{
 	width: 90%;
 	margin: auto;
@@ -58,6 +69,16 @@ box-sizing: border-box;
 #info{
 	border-top:1px solid black;
 	border-bottom: 2.5px solid black;
+	position: relative;
+	
+}
+
+#info * {
+	position: relative;
+	animation: marquee 15s;
+	animation-timing-function: linear;
+	-webkit-animation: marquee 15s infinite;
+	-webkit-animation-timing-function: linear;
 }
 
 #side-title{
