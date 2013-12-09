@@ -23,6 +23,39 @@ $(document).ready(function(){
 	}
 });
 
+var bgContext;
+var video;
+var context;
+
+$(document).ready(function(){
+	context = document.getElementById('screen').getContext('2d');
+	video = document.getElementById('video');
+	var bgCanvas = document.createElement('canvas');
+	bgContext = bgCanvas.getContext('2d');
+	bgCanvas.width = 700;
+	bgCanvas.height = 400;
+
+	video.addEventListener('play', function() {
+    	setInterval(makeItGrey, 33);
+	}, false);
+	video.play();
+});
+
+function makeItGrey() {
+    bgContext.drawImage(video, 0,100, 1260, 400, 0, 64,700,400);
+    var pixelData = bgContext.getImageData(0, 0, 700, 400);
+    for (var i = 0; i < pixelData.data.length; i += 4 ) {
+        var r = pixelData.data[i];
+        var g = pixelData.data[i+1];
+        var b = pixelData.data[i+2];
+        var averageColour = (r + g + b) / 3;
+        pixelData.data[i] = averageColour;
+        pixelData.data[i+1] = averageColour;
+        pixelData.data[i+2] = averageColour;
+    }
+    context.putImageData(pixelData, 0,0);
+}
+
 $(document).ready(function (){
 	var feed = new google.feeds.Feed("http://rss.cnn.com/rss/edition.rss");
 	feed.setNumEntries(4);
