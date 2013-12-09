@@ -1,5 +1,3 @@
-google.load("feeds", "1");
-
 $(document).ready(function(){
 	var worker = new Worker("../javascript/worker.js");
 
@@ -56,19 +54,24 @@ function makeItGrey() {
     context.putImageData(pixelData, 0,0);
 }
 
+google.load("feeds", "1");
+var feedWorker;
+var feedArea;
 $(document).ready(function (){
+	feedWorker = new Worker('../javascript/worker-feed.js');
+	feedArea = $(".container-123").find('div');
 	var feed = new google.feeds.Feed("http://rss.cnn.com/rss/edition.rss");
 	feed.setNumEntries(4);
 	feed.load(function(result) {
 		if (!result.error) {
-		    var area = $(".container-123").find('div');
-		    area.text('');
-			for (var i = 0; i < result.feed.entries.length; i++) {
-		        var entry = result.feed.entries[i];
-		        var code = '<div><strong>' + entry.title + '</strong><p>' + entry.content + '</p></div>'
-		        area.html(area.html() + code);
-	    	}
+			feedWorker.postMessage(result.feed);
 		}
 	});
+	feedWorker.onmessage = function (event) {
+		var news = $('<div style="display:none;"><strong>' + event.data['title'] +
+		 '</strong><p>' + event.data['content'] + '</p></div>');
+        feedArea.prepend(news);
+        news.fadeIn(2000);
+	}
 });
 
