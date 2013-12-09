@@ -3,6 +3,7 @@ importScripts('tinyxmlw3cdom.js');
 importScripts('tinyxmlsax.js');
 
 var article = 6;
+var prevPane = -1;
 var xmlObject;
 self.onmessage = function (data) {
 	
@@ -19,7 +20,12 @@ xmlhttp = new XMLHttpRequest();
 	xmlhttp.send("");
 
 function changeArticle(){
-	var pane = Math.floor((Math.random()*5)+1); 
+	var pane = 0;
+	do{
+		pane = Math.floor((Math.random()*5)+1);
+	} while(pane == prevPane)
+	prevPane = pane;
+	
 	var xmlArticle = xmlObject.getElementsByTagName("article").item(article);
 	article += 1;
 	if (article > 25) article = 0;
