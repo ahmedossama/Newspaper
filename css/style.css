@@ -3,12 +3,24 @@
 	src: url('../resources/harryf.TTF');
 }
 
+@font-face{
+	font-family: article-title;
+	src: url('../resources/Magdeburg.TTF');
+}
+
+@font-face{
+	font-family: fine-print;
+	src: url('../resources/Prociono.ttf');
+}
+
 .container{
 	width: 90%;
 	margin: auto;
 }
 body{
-background-image:url('paper1.jpg');
+	background-image: url("../resources/background.jpg");
+    background-position: -164px center;
+    background-size: 124% 157%;
 }
 
 #title{
@@ -71,7 +83,7 @@ box-sizing: border-box;
 	vertical-align: top;
 	margin: 2px;
 	overflow: hidden;
-	height: 900px;
+	height: 812px;
 }
 
 .container-top{
@@ -85,11 +97,17 @@ box-sizing: border-box;
 
 .title1{
 	display: block;
-	position: relative;
-	font-size: 23px;
-	width: 100%;
-	white-space: pre-wrap;
-	margin: 0px;
+    font-family: article-title;
+    font-size: 35px;
+    font-weight: 900;
+    margin-bottom: 0;
+    margin-left: 20px;
+    margin-top: 0;
+    position: relative;
+    transform: skewX(20deg);
+    white-space: normal;
+    width: 100%;
+    -webkit-transform: skewX(20deg);
 }
 
 .title2{
@@ -125,15 +143,19 @@ hr{
 .container-3{
 	display: inline-block;
 	width: 420px;
-	height: 1250px;
+	height: 1190px;
+	font-family: fine-print;
+	font-size: 14px;
 }
 .container-23{
 	display: inline-block;
 	vertical-align: top;
 	border-left: 1px solid black;
 	padding-left: 10px;
-	height: 1250px;
+	height: 1190px;
 	width: 700px;
+	font-family: fine-print;
+	font-size: 14px;
 }
 
 #video-container{
