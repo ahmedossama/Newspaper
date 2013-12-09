@@ -36,11 +36,12 @@ body{
 
 #title{
 	height: 195px;
+	position: relative;
+	left: 75px;
 }
 
 #paper-title{
 	display: inline-block;
-	width: 56%;
 	font-size: 100px;
 	font-family: titlefont;
 	position: relative;
@@ -70,6 +71,7 @@ box-sizing: border-box;
 	border-top:1px solid black;
 	border-bottom: 2.5px solid black;
 	position: relative;
+	font-family: fine-print;
 	
 }
 
